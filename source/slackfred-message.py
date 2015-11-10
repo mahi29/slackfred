@@ -78,17 +78,22 @@ def main(wf):
     channels_list = wf.cached_data('channels', wrapper, max_age=120)
 
     query = args.query
-    '''
+
     if query:
         channels_list = wf.filter(query, channels_list, key=search_slack_channels)
-    '''
-    for channels in channels_list:
-        if channels['member'] == True:
-            wf.add_item(title=channels['name']+' - '+channels['team'],
-                subtitle='Member',
-                autocomplete=channels['name'] + ' > ',
-                arg=query,
-                valid=True)
+
+    if len(channels_list) == 0:
+        wf.add_item(title="Enter your message",
+                    arg=query,
+                    valid=True)
+    else:
+        for channels in channels_list:
+            if channels['member'] == True:
+                wf.add_item(title=channels['name']+' - '+channels['team'],
+                    subtitle='Member',
+                    autocomplete=channels['name'] + ' > ',
+                    arg=query,
+                    valid=True)
 
     wf.send_feedback()
 
