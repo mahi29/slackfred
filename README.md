@@ -19,6 +19,8 @@ Example: `team-org-api-token-1,team-org-api-token-2`
 ## Currently Available Functionality
 * `slt`: Set your API Token
   * Open alfred and type `slt`, then paste your token. If you don't have a token, then hold `cmd` to open the API page to get one (look for your team near the bottom of the page).
+* `slm`: Send messages to a channel
+  * Open alfred and type `slm` to populate channels. Use your arrow keys to select a channel and hit TAB. Then you can enter your message and hit ENTER.
 * `slf`: Search files
   * Open alfred and type `slf` to search files. Selecting a file opens it in your browser
 * `slp`: Set your presence
