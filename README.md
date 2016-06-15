@@ -9,8 +9,8 @@ I'm currently in the process of getting this updated to work with multiple organ
 
 ## Getting started
 1. Install slackfred by visiting the download page in Github or via the [Packal page](http://www.packal.org/workflow/slackfred)
-2. Open alfred and type `slt`, then hold `cmd` (apple key) and press `enter`. This will open up the Slack API page. Then look for your team (make sure you're logged in) near the bottom. Next to your team name will be your token.
-3. Launch alfred and re-run `slt` to enter your token. 
+2. Open alfred and type `slt`, then hold `cmd` (apple key) and press `enter`. This will open up the Slack API page. Then look for your team (make sure you're logged in) near the bottom. If you already have a token, it will be next to your team name. If you haven't, click `Create token`.
+3. Launch alfred and type `slt`, this time followed by your token. Press `enter` to save your token. 
 
 ##### Multi-team use instructions
 In order to use the workflow with multiple organizations you will need to enter all of your keys as comma seperated strings with **no** spaces.  
