@@ -58,16 +58,19 @@ def main(wf):
 
     if args.message:
         query = args.message
-        split_message = query.split()
-        channel_name = split_message[0]
-        if len(split_message) == 3:
-            message = split_message[2]
+        carrot = query.find('>')
+        colon = query.find(':')
+        team = query[:(colon - 1)]
+        channel_name = query[(colon+2):(carrot-1)]
+        message = query[(carrot+2):].split()
+        if len(message) >= 2:
+            message = '%20'.join(message)
         else:
-            message = '%20'.join(split_message[2:])
+            message = message[0]
         for key in slack_keys():
                 api_key = str(key)
                 slack_auth = web.get('https://slack.com/api/auth.test?token=' + api_key + '&pretty=1').json()
-                if slack_auth['ok'] is True:
+                if slack_auth['ok'] is True and slack_auth['team'] == team:
                     message_url = 'https://slack.com/api/chat.postMessage?token=' + api_key + '&channel=%23' + channel_name + '&text=' + message + '&as_user=true&pretty=1'
                     web.get(message_url)
 
@@ -91,7 +94,7 @@ def main(wf):
             if channels['member'] == True:
                 wf.add_item(title=channels['name']+' - '+channels['team'],
                     subtitle='Member',
-                    autocomplete=channels['name'] + ' > ',
+                    autocomplete='{0} : {1} > '.format(channels['team'], channels['name']),
                     arg=query,
                     valid=True)
 

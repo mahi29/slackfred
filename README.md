@@ -36,6 +36,9 @@ Example: `team-org-api-token-1,team-org-api-token-2`
 * `sls`: Perform a query across all your channels in your organizations
   * Highlight a result and hitting enter opens the web client to that result
   * Depending on the size of your organization this can take a few seconds to run
+* `slz`: Snooze a team:
+    * Open alfred and type `slz` to populate teams. Find your team and hit TAB, then enter the amount of time to snooze in **minutes** -- this allows type ahead searching if you're in a lot of teams.
+    * To **disable** snooze for a team, perform the above steps and enter *0* for the time.
 
 
 ## To-do
