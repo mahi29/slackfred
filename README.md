@@ -30,7 +30,7 @@ Example: `team-org-api-token-1,team-org-api-token-2`
   * Open alfred and type `slc` to display a searchable list of channels. Selecting a channel with `alt` leaves and `ctrl` lets you join. Currently only `alt` is functional with groups.
 * `slclr`: Clear unread messages
   * This currently only marks Channels as read and not groups. Depending on the size of your organizations this can also take a few seconds to run.
-* `slim`: Enter a users name to search for most recent DM messages
+* `slim`: Enter a user's name to search for most recent DM messages
 * `slr`: Search your starred items
   * Highlight a result and hitting enter opens the web client to that result
 * `sls`: Perform a query across all your channels in your organizations
