@@ -1,3 +1,5 @@
+I'm no longer actively working on this Workflow. If there any bugs or updates, please feel free to create a pull request to fix them and I'll merge it in.
+
 slackfred
 =========
 
