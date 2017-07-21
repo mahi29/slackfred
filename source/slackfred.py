@@ -39,7 +39,7 @@ def slack_list(keys):
                 slack_search.append({'name': channels['name'], 'team': slack_auth['team'],'team_id': slack_auth['team_id'], 'id': channels['id'], 'type': 'channel', 'api_key': api_key})
             for users in slack_users['members']:
                 slack_search.append({'name': users['name'], 'team': slack_auth['team'],'team_id': slack_auth['team_id'], 'id': users['id'], 'type': 'user', 'api_key': api_key})
-                slack_search.append({'name': users['profile']['real_name_normalized'], 'team': slack_auth['team'],'team_id': slack_auth['team_id'], 'id': users['id'], 'type': 'user', 'api_key': api_key})
+                slack_search.append({'name': users['profile']['real_name'], 'team': slack_auth['team'],'team_id': slack_auth['team_id'], 'id': users['id'], 'type': 'user', 'api_key': api_key})
             for groups in slack_groups['groups']:
                 if 'name' in groups:
                     slack_search.append({'name': groups['name'], 'team': slack_auth['team'],'team_id': slack_auth['team_id'], 'id': groups['id'], 'type': 'group', 'api_key': api_key})
