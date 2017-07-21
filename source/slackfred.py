@@ -2,7 +2,7 @@ import sys
 import argparse
 from workflow import Workflow, web, PasswordNotFound
 import json
-import webbrowser
+import subprocess
 
 def slack_keys():
     wf = Workflow()
@@ -79,7 +79,7 @@ def main(wf):
 
     if args.open:
         url = slack_urlopen(wf.args[1])
-        webbrowser.open(url)
+        subprocess.call(['open', url])
         return
 
     if len(wf.args):
