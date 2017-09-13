@@ -1,6 +1,7 @@
 import sys
 import argparse
 import subprocess
+from requests.utils import quote
 from workflow import Workflow, web, PasswordNotFound
 
 
@@ -62,16 +63,12 @@ def main(wf):
         colon = query.find(':')
         team = query[:(colon - 1)]
         channel_name = query[(colon+2):(carrot-1)]
-        message = query[(carrot+2):].split()
-        if len(message) >= 2:
-            message = '%20'.join(message)
-        else:
-            message = message[0]
+        encoded_message = quote(query[(carrot+2):])
         for key in slack_keys():
                 api_key = str(key)
                 slack_auth = web.get('https://slack.com/api/auth.test?token=' + api_key + '&pretty=1').json()
                 if slack_auth['ok'] is True and slack_auth['team'] == team:
-                    message_url = 'https://slack.com/api/chat.postMessage?token=' + api_key + '&channel=%23' + channel_name + '&text=' + message + '&as_user=true&pretty=1'
+                    message_url = 'https://slack.com/api/chat.postMessage?token=' + api_key + '&channel=%23' + channel_name + '&text=' + encoded_message + '&as_user=true&pretty=1'
                     web.get(message_url)
 
 
