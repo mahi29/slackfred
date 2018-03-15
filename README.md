@@ -11,7 +11,7 @@ I'm currently in the process of getting this updated to work with multiple organ
 
 ## Getting started
 1. Install slackfred by visiting the download page in Github or via the [Packal page](http://www.packal.org/workflow/slackfred)
-2. Open alfred and type `slt`, then hold `cmd` (apple key) and press `enter`. This will open up the Slack Web API page. Scroll down to the Authenticatio section and click on `Generate test tokens`. You will see the option to create a token for each of your **logged in** teams. If a team is not there make sure you have logged in as that team.
+2. Open alfred and type `slt`, then hold `cmd` (apple key) and press `enter`. This will open up the Slack Web API page. Scroll down to the Authentication section and click on `Generate test tokens`. You will see the option to create a token for each of your **logged in** teams. If a team is not there make sure you have logged in as that team.
 3. Launch alfred and type `slt`, this time followed by your token. Press `enter` to save your token. 
 
 ##### Multi-team use instructions
